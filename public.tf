@@ -19,3 +19,13 @@ resource "aws_subnet" "eks_subnet_public_1b" {
     "kubernetes.io/role/elb" = 1
   }
 }
+
+resource "aws_route_table_association" "eks_rtb_assoc_1a" {
+  subnet_id = aws_subnet.eks_subnet_public_1a.id
+  route_table_id = aws_route_table.eks_public_route_table.id
+}
+
+resource "aws_route_table_association" "eks_rtb_assoc_1b" {
+  subnet_id = aws_subnet.eks_subnet_public_1b.id
+  route_table_id = aws_route_table.eks_public_route_table.id
+}
