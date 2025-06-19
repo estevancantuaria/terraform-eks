@@ -1,3 +1,3 @@
-output "vpc_id" {
-  value = module.eks_network.vpc_id
+output "oidc" {
+  value = module.eks_cluster.oidc
 }
